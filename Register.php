@@ -34,8 +34,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+84 90 785 3006</h5>
-                                <span>support 24/7 time</span>
+                                <h5>0389 766 155</h5>
+                                <span>Support 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ if(isset($_POST['btnRegister']))
             pg_query($conn,"INSERT INTO customer (username, password, custname, gender, address, telephone,
              email, cusdate, cusmonth, cusyear, ssn, activecode, state)
              VALUES ('$us','$pass','$fullname','$sex', '$address', '$tel', '$email',
-              $date, $month, $year,'','',0)") or die(pg_error($conn));
+              $date, $month, $year,'','',0)") or die(pg_last_error($conn));
              echo"You have registered successfully";
 
         }

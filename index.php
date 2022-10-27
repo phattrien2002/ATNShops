@@ -116,7 +116,7 @@ include_once("connection.php");
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> sieungccgcc19186@fpt.edu.vn</li>
+                <li><i class="fa fa-envelope"></i>trientpgcc200063@fpt.edu.vn</li>
                 <li>A shopping website for toy</li>
             </ul>
         </div>
@@ -143,7 +143,7 @@ include_once("connection.php");
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> sieungcc19186@fpt.edu.vn</li>
+                                <li><i class="fa fa-envelope"></i> trientpgcc200063@fpt.edu.vn</li>
                                 <li>A shopping website for toy </li>
                             </ul>
                         </div>
@@ -403,8 +403,8 @@ include_once("connection.php");
                         </div>
                         <ul>
                             <li>Address: 160 Road 30/4 An Phu, Ninh Kieu, Can Tho, Vietnam</li>
-                            <li>Phone: +84 90 785 3006</li>
-                            <li>Email: sieungcc19186@fpt.edu.vn</li>
+                            <li>Phone: 0389 766 155</li>
+                            <li>Email: trientpgcc200063@fpt.edu.vn</li>
                         </ul>
                     </div>
                 </div>

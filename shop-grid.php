@@ -38,8 +38,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+84 09 078 53006</h5>
-                                <span>support 24/7 time</span>
+                                <h5>0389 766 155</h5>
+                                <span>Support 24/7</span>
                             </div>
                         </div>
                     </div>
