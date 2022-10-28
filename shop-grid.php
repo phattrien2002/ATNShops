@@ -282,7 +282,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="filter__item">
+                    <!-- <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
@@ -305,18 +305,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                     <?php 
                         if(isset($_GET['id'])){
                             $id=$_GET['id'];
-                            $result = pg_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
+                            $re = pg_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
                             from product, category where product.cat_id = category.cat_id and '$id'=category.cat_id ");
                         
                         }
                         else{
 
-                            $result = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name  from product a, category b  
+                            $re = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name  from product a, category b  
                             where a.cat_id = b.cat_id order by cat_name desc");
                         }
                         
