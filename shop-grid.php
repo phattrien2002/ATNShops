@@ -172,7 +172,7 @@
                             where a.cat_id = b.cat_id order by cat_name desc");
                         }
                         
-                    while($row=pg_fetch_array($re, NULL, PGSQL_ASSOC)) { 
+                    while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC)) { 
                         
                     ?>
                     
