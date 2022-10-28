@@ -82,11 +82,11 @@
     <?php 
                 if(isset( $_POST['btnSearch']))
                 {
-                    $search = $_POST['txtSearch'];
-                    $result = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name 
-                    from product a, category b 
-                    where a.cat_id = b.cat_id AND product_name like '%$search%' order by pro_image desc");
-                    ?>
+                    $keyword = $_POST['txtSearch'];
+                    $sql = "SELECT * FROM product where product_name LIKE '%$keyword%' order by product_id DESC";
+                    $re =pg_query($conn,$sql);
+                }
+                ?>
                     <section class="featured spad">
                         <div class="container">
                             <div class="row">
@@ -124,7 +124,6 @@
                         </div>
                     </section>
                     <?php
-                }else
                 {
                     include_once('Featured.php');
                 }
