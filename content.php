@@ -123,9 +123,6 @@
                         </div>
                     </section>
                     <?php
-                {
-                    include_once('Featured.php');
-                }
                 ?>
 
     <!-- Featured Section Begin -->
