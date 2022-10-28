@@ -81,11 +81,10 @@
     <!-- Categories Section End -->
     <?php 
                 if(isset( $_POST['btnSearch']))
-                {
-                    $keyword = $_POST['txtSearch'];
-                    $sql = "SELECT * FROM product where product_name LIKE '%$keyword%' order by product_id DESC";
-                    $re =pg_query($conn,$sql);
-                }
+                $search = $_POST['txtSearch'];
+                $result = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name 
+                from product a, category b 
+                where a.cat_id = b.cat_id AND product_name like '%$search%' order by pro_image desc");
                 ?>
                     <section class="featured spad">
                         <div class="container">
