@@ -90,7 +90,7 @@
 			{
 				$sql = "select * from category where cat_id ='$id' and cat_name = '$name'";
 				$result = pg_query($conn, $sql);
-				if(pg_num_rows($result)=="0")
+				if(pg_num_rows($re)=="0")
 				{
 					pg_query($conn, "insert into category (cat_id, cat_name, cat_des) values ('$id', '$name','$des')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=cat"';
