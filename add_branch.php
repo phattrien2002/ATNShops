@@ -22,16 +22,21 @@
 		include_once("connection.php");
 		if(isset($_POST['btnAdd']))
 		{
-			$id = $_POST['txtID'];
-			$name = $_POST['txtName'];
+			$b_id = $_POST['txtID'];
+			$b_name = $_POST['txtName'];
+			$b_address =$_POST['txtAddress'];
 			$err = "";
-			if($id=="")
+			if($b_id=="")
 			{
 				$err .= "Enter branch ID</br>";
 			}
-			if($name=="")
+			if($b_name=="")
 			{
 				$err .= "Enter branch name</br>";
+			}
+			if($b_address=="")
+			{
+				$err .= "Enter branch Address</br>";
 			}
 			if($err != "")
 			{
@@ -39,11 +44,11 @@
 			}
 			else
 			{
-				$sql = "select * from branch where branch_id ='$id' and branch_name = '$name'";
+				$sql = "select * from branch where branch_id ='$b_id' and branch_name = '$b_name'";
 				$re = pg_query($conn, $sql);
 				if(pg_num_rows($re)=="0")
 				{
-					pg_query($conn, "insert into branch (branch_id, branch_name) values ('$id', '$name')");
+					pg_query($conn, "insert into branch (branch_id, branch_name, branch_address) values ('$b_id', '$b_name', '$b_addres')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=branch"';
 				}
 				else
@@ -70,6 +75,13 @@
 							</div>
 					</div>
                     
+
+					<div class="form-group">
+						    <label for="txtTen" class="col-sm-2 control-label">Branch Address(*):  </label>
+							<div class="col-sm-10">
+							      <input type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Branch Address" value='<?php echo isset($_POST["txtAddress"])?($_POST["txtAddress"]):"";?>'>
+							</div>
+					</div>
                     
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
