@@ -224,7 +224,7 @@ include_once("connection.php");
                             <li class="active"><a href="?page=content">Home</a></li>
                             <li><a href="?page=shop-grid">Shop</a></li>
                             
-                            <?php  if(isset($_SESSION['adminstrator']) && $_SESSION['adminstrator'] == 1){ 
+                            <?php  if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){ 
 
                             ?>  <li><a id ="CMM"href="?page=pm">Product Management </a>
                                     <ul class="header__menu__dropdown">
