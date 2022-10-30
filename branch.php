@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Branches Management</h2>
+                        <h2>Branch Management</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
-                            <span>Branches Management</span>
+                            <span>Branch Management</span>
                         </div>
                     </div>
                 </div>
