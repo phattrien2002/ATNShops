@@ -44,7 +44,7 @@
 	function bind_Supplier_List($conn){
 		$sqlstring ="SELECT supplier_id, supplier_name from supplier";
 		$result= pg_query($conn, $sqlstring);
-		echo"<SELECT name ='SupplierList'class='form-control '
+		echo"<SELECT name ='supplier'class='form-control '
 			<option value='0'>Choose branch</option>";
 			while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
 				echo"<OPTION value='".$row['supplier_id']."'>".$row['supplier_name']. "</option>";
