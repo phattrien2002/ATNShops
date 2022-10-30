@@ -372,9 +372,14 @@ include_once("connection.php");
         else if($page=="upbr")
         {
             include_once('update_branch.php');
-        } else if($page=="addbr")
+        } 
+        else if($page=="addbr")
         {
             include_once('add_branch.php');
+        }
+        else if($page=="addsupplier")
+        {
+            include_once('supplier.php');
         }
         
         else if($page=="Fea")
