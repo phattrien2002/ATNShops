@@ -24,6 +24,7 @@
 		{
 			$id = $_POST['txtID'];
 			$name = $_POST['txtName'];
+			$address = $_POST['txtAddress'];
 			
 			$err = "";
 			if($id=="")
@@ -34,17 +35,21 @@
 			{
 				$err .= "Enter branch name</br>";
 			}
+			if($address=="")
+			{
+				$err .= "Enter branch address</br>";
+			}
 			if($err != "")
 			{
 				echo $err;
 			}
 			else
 			{
-				$sql = "select * from branch where branch_id ='$id' and branch_name = '$name'";
+				$sql = "select * from branch where branch_id ='$id' and branch_name = '$name'and branch_address = '$address'";
 				$re = pg_query($conn, $sql);
 				if(pg_num_rows($re)=="0")
 				{
-					pg_query($conn, "insert into branch (branch_id, branch_name) values ('$id', '$name')");
+					pg_query($conn, "insert into branch (branch_id, branch_name) values ('$id', '$name','$address')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=branch"';
 				}
 				else
@@ -68,6 +73,12 @@
 						    <label for="txtTen" class="col-sm-2 control-label">Branch Name(*):  </label>
 							<div class="col-sm-10">
 							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
+							</div>
+					</div>
+					<div class="form-group">
+						    <label for="txtTen" class="col-sm-2 control-label">Branch Address(*):  </label>
+							<div class="col-sm-10">
+							      <input type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Branch Address" value='<?php echo isset($_POST["txtAddress"])?($_POST["txtAddress"]):"";?>'>
 							</div>
 					</div>
                     
