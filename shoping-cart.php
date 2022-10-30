@@ -108,7 +108,7 @@
                             <tbody>
     
     <?php
-        include_once("permission.php");
+        // include_once("permission.php");
     
         if(isset($_GET["function"]) =="del"){
             if(isset($_GET["id"])){
