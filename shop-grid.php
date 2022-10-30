@@ -38,7 +38,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+84 09 078 53006</h5>
+                                <h5>+84 949 010 942</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="ATNtoy/background.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="ATNtoy/12345.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -282,18 +282,41 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="filter__sort">
+                                    <span>Sort By</span>
+                                    <select>
+                                        <option value="0">Default</option>
+                                        <option value="0"> </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span>21</span> Products found</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-3">
+                                <div class="filter__option">
+                                    <span class="icon_grid-2x2"></span>
+                                    <span class="icon_ul"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                     <?php 
                         if(isset($_GET['id'])){
                             $id=$_GET['id'];
-                            $re = pg_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
+                            $result = pg_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
                             from product, category where product.cat_id = category.cat_id and '$id'=category.cat_id ");
                         
                         }
                         else{
 
-                            $re = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name  from product a, category b  
+                            $result = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name  from product a, category b  
                             where a.cat_id = b.cat_id order by cat_name desc");
                         }
                         

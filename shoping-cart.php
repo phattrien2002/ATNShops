@@ -1,4 +1,3 @@
-
 <script>
         function deleteConfirm(){
             if(confirm("Are you sure?")){
@@ -60,7 +59,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>0389 766 155</h5>
+                                <h5>+84 949 010 942</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
@@ -108,7 +107,7 @@
                             <tbody>
     
     <?php
-        // include_once("permission.php");
+    
     
         if(isset($_GET["function"]) =="del"){
             if(isset($_GET["id"])){

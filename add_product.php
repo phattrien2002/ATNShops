@@ -86,19 +86,31 @@
 			}
 			echo"</select>";
 	}
+	function bind_Supplier_List($conn){
+		$sqlstring ="SELECT supplierid, suppliername from supplier";
+		$result= pg_query($conn, $sqlstring);
+		echo"<SELECT name ='SupplierList'class='form-control '
+			<option value='0'>Choose branch</option>";
+			while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
+				echo"<OPTION value='".$row['supplierid']."'>".$row['suppliername']. "</option>";
+			}
+			echo"</select>";
+	}
 
 	if(isset($_POST["btnAdd"]))
 	{  
 		$id = $_POST["txtID"];
 		$proname=$_POST["txtName"];
 		$short=$_POST['txtShort'];
-		$branch=$_POST['txtbranch'];
+		// $branch=$_POST['txtbranch'];
+		// $supplier=$_POST['txtsupplier'];
 		$detail=$_POST['txtDetail'];
 		$price=$_POST['txtPrice'];
 		$qty=$_POST['txtQty'];
         $pic=$_FILES['txtImage'];
         $category=$_POST['CategoryList'];
 		$branchlist=$_POST['BranchList'];
+		$supplierlist=$_POST['SupplierList'];
 		
 		$err="";
 		
@@ -125,11 +137,12 @@
 						copy($pic['tmp_name'],"ATNtoy/".$pic['name']);
 						$filePic =$pic['name'];
 						$sqlstring="INSERT INTO product(
-							product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, branch_id)
-							VALUES('$id','$proname', $price,'$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filePic','$category', '$branchlist')";
+							product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, branch_id,supplierid)
+							VALUES('$id','$proname', $price,'$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filePic','$category', '$branchlist','$supplierlist')";
 							
 						pg_query($conn, $sqlstring);
 						echo'<li>You have add successfully</li>';
+						
 
 					}	
 					else {
@@ -192,6 +205,13 @@
 							<div class="col-sm-10">
                             
 							      <?php bind_Branch_List($conn); ?>
+							</div>
+                </div> 
+				<div class="form-group">   
+                    <label for="" class="col-sm-2 control-label">Supplier(*):  </label>
+							<div class="col-sm-10">
+                            
+							      <?php bind_Supplier_List($conn); ?>
 							</div>
                 </div> 
 				       

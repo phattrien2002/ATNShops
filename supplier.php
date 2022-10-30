@@ -21,7 +21,7 @@
 <form name="frm" method="post" action="">
         <h2>Supplier</h2>
         <p>
-        <i class="fa fa-plus"></i> <a href="?page=adds"> Add</a>
+        <i class="fa fa-plus"></i> <a href="?page=addSupp"> Add</a>
         </p>
         <table id="tablesupplier" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -53,7 +53,7 @@
                 ?>
 			<tr>
                 <td class="cotCheckBox"><?php echo $No; ?></td>
-                <td><?php echo $row['supplier_name']?></td>
+                <td><?php echo $row['suppliername']?></td>
                 <td style='text-align:center'><a href="?page=updateSupp&&id=<?php echo $row['supplierid'];?>"><i class="fa fa-edit"></i></td>
                 <td style='text-align:center'><a href="?page=branch&&function=del&&id=<?php echo $row['supplierid']; ?>"
                  onclick="return ConfirmDelete()"><i class="fa fa-close"></i></td>

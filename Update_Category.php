@@ -1,4 +1,5 @@
-<section class="hero hero-normal">
+ <!-- Hero Section Begin -->
+    <section class="hero hero-normal">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -36,7 +37,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+84 90 785 3006</h5>
+                                <h5>+84 949 010 942</h5>
                                 <span>support 24/7 time</span>
                             </div>
                         </div>
@@ -55,8 +56,8 @@
                     <div class="breadcrumb__text">
                         <h2>Category Management</h2>
                         <div class="breadcrumb__option">
-                            <a href="?page=content">Home</a>
-                            <span>Categories Management</span>
+                            <a href="./index.html">Home</a>
+                            <span>Cstegory Management</span>
                         </div>
                     </div>
                 </div>
@@ -65,73 +66,81 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-	    
-	<?php
-		include_once("connection.php");
-		if(isset($_POST['btnAdd']))
-		{
-			$id = $_POST['txtID'];
-			$name = $_POST['txtName'];
-			$des = $_POST['txtDes'];
-			$err = "";
-			if($id=="")
-			{
-				$err .= "Enter category ID</br>";
-			}
-			if($name=="")
-			{
-				$err .= "Enter category name</br>";
-			}
-			if($err != "")
-			{
-				echo $err;
-			}
-			else
-			{
-				$sql = "select * from category where cat_id ='$id' and cat_name = '$name'";
-				$result = pg_query($conn, $sql);
-				if(pg_num_rows($result)=="0")
-				{
-					pg_query($conn, "insert into category (cat_id, cat_name, cat_des) values ('$id', '$name','$des')");
-					echo '<meta http-equiv="refresh" content="0;URL =?page=cat"';
-				}
-				else
-				{
-					echo "Data duplicated";
-				}
-			}
-		}
-	?>
 
+   	<?php
+		
+		if(isset($_GET["id"]))
+		{
+			$id = $_GET['id'];
+			$result = pg_query($conn, "SELECT * from category where cat_id = '$id'");
+			$row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
+			$cat_id = $row['cat_id'];
+			$cat_name = $row['cat_name'];
+			$cat_des = $row['cat_des'];
+	?>
 <div class="container">
-	<h2>Adding Category</h2>
+	<h2>Updating Product Category</h2>
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Category ID(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Category ID" value='<?php echo isset($_POST["txtID"])?($_POST["txtID"]):"";?>'>
+								  <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Category ID" readonly 
+								  value='<?php echo $row['cat_id'] ?>'>
 							</div>
 					</div>	
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Category Name(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Category Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
+								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Category Name" 
+								  value='<?php echo $row['cat_name'] ?>'>
 							</div>
 					</div>
                     
                     <div class="form-group">
 						    <label for="txtMoTa" class="col-sm-2 control-label">Description(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" value='<?php echo isset($_POST["txtDes"])?($_POST["txtDes"]):"";?>'>
+								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" 
+								  value='<?php echo $row['cat_des']?>'>
 							</div>
 					</div>
                     
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-						      <input type="submit"  class="site-btn" name="btnAdd" id="btnAdd" value="Add new"/>
+						      <input type="submit"  class="site-btn" name="btnUpdate" id="btnUpdate" value="Update"/>
                               <input type="button" class="site-btn" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=cat'" />
                               	
 						</div>
 					</div>
 				</form>
 	</div>
+
+	<?php
+		if(isset($_POST['btnUpdate']))
+		{
+			$id = $_POST['txtID'];
+			$name = $_POST['txtName'];
+			$des = $_POST['txtDes'];
+			$err="";
+			if($name=="")
+			{
+				$err .= "</br>Enter name</br>";
+			}
+			if ($err !="")
+			{
+				echo $err;
+			}
+			else
+			{
+				pg_query($conn, "UPDATE Category set cat_name = '$name', cat_des ='$des' where cat_id = '$id'");
+				echo '<meta http-equiv="refresh" content="0;URL =?page=cat"/>';
+			}
+		}
+	?>
+
+    <?php
+		}
+		else
+		{
+			echo '<meta http-equiv="refresh" content="0;URL =?page=pm"/>';
+		}
+	?>

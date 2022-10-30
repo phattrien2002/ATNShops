@@ -34,14 +34,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="hero__item set-bg" data-setbg="ATNtoy/12345.jpg">
+                    <div class="hero__item set-bg" data-setbg="ATNtoy/background.jpg">
                         <div class="hero__text">
                             <span>NEW ON</span>
-                            <h2>ATN <br />TOY </h2> 
+                            <h2>ATN <br />TOY</h2> 
                             
                             <a href="?page=shop-grid" class="primary-btn">SHOP NOW</a>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,11 +54,9 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="ATNtoy/acee.jpg">
+                    <div class="categories__item set-bg" data-setbg="ATNtoy/acee.jpg">
                             <h5><a href="#">Portgas.D. Ace</a></h5>
                         </div>
-                    </div>
-                    <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="ATNtoy/luffy.jpg">
                             <h5><a href="#">Mokey. D. Luffy</a></h5>
                         </div>
@@ -68,9 +66,7 @@
                             <h5><a href="#">Levi Akerman</a></h5>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="ATNtoy/Mikey.jpg">
+                    <div class="categories__item set-bg" data-setbg="ATNtoy/Mikey.jpg">
                             <h5><a href="#">Mikey Sanjiro</a></h5>
                         </div>
                     </div>
@@ -85,7 +81,7 @@
                     $search = $_POST['txtSearch'];
                     $result = pg_query($conn,"SELECT product_id, product_name, price, pro_qty, pro_image, cat_name 
                     from product a, category b 
-                    where a.cat_id = b.cat_id AND product_name like '%$search%' order by pro_image desc");
+                    where a.catid = b.cat_id AND product_name like '%$search%' order by pro_image desc");
                     ?>
                     <section class="featured spad">
                         <div class="container">
@@ -98,12 +94,12 @@
                             </div>
                             <div class="row featured__filter">
                     <?php
-                    while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC)) { 
+                    while($row=pg_fetch_array($result, NULL, MYSQLI_ASSOC)) { 
                     ?>
                    
                                 <div class="col-lg-3 col-md-4 col-sm-6 mix ">
                                     <div class="featured__item">
-                                        <div class="featured__item__pic set-bg" data-setbg="ATNtoy/<?php echo $row['pro_image'] ?>">
+                                        <div class="featured__item__pic set-bg" data-setbg="img/<?php echo $row['pro_image'] ?>">
                                             <ul class="featured__item__pic__hover">
                                             
                                                 <li><a href="#"><span class="fa fa-heart"></span></a></li>
@@ -133,7 +129,7 @@
     <!-- Featured Section Begin -->
 
     <!-- Featured Section End -->
-o
+
     
 
 

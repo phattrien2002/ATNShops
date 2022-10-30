@@ -1,4 +1,3 @@
-
 <section class="hero">
         <div class="container">
             <div class="row">
@@ -9,10 +8,10 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">One Piece</a></li>
-                            <li><a href="#">CTokyo Revenger</a></li>
+                            <li><a href="#">Vinyl</a></li>
+                            <li><a href="#">Cassette</a></li>
                             
-                            <li><a href="#">Attack on Titan</a></li>
+                            <li><a href="#">Audio</a></li>
                             
                         </ul>
                     </div>
@@ -50,156 +49,80 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Register</h2>
+                        <h2>Profile</h2>
                         <div class="breadcrumb__option">
                             <a href="?page=content">Home</a>
-                            <span>Register</span>
+                            <span>Profile</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <?php 
-if(isset($_POST['btnRegister']))
-{
-    $us = $_POST ['txtUsername'];
-    $pass1= $_POST['txtPass1'];
-    $pass2= $_POST['txtPass2'];
-    $fullname= $_POST['txtFullname'];
-    $email= $_POST['txtEmail'];
-    $address= $_POST['txtAddress'];
-    $tel= $_POST['txtTel'];
+<?php
+		
+		
+		if(isset($_SESSION['us'])){
+			$account =$_SESSION['us'];
+			$result = pg_query($conn, "SELECT * from customer where username='$account' ");
+			$row = pg_fetch_array($result,NULL, PGSQL_ASSOC);
+            $Cusname = $row['custname'];
+            $Gender = $row['gender'];
+            $Address = $row['address'];
+            $telephone = $row['telephone'];
+            $email = $row['email'];
+            $CusDate = $row['cusdate'];
+            $CusMonth = $row['cusmonth'];
+            $CusYear = $row['cusyear'];
 
-    if(isset($_POST['grpRender']))
-    {
-        $sex= $_POST['grpRender'];
-    }
-    $date = $_POST['slDate'];
-    $month = $_POST['slMonth'];
-    $year = $_POST['slYear'];
-
-    $err ="";
-    if($us==""||$address=="" ||$pass1=="" ||$fullname==""||$email==""||$tel==""||!isset($sex))
-    {
-        $err.="<li>Enter fields with mark(*), please</li>";
-    }
-    if(strlen($pass1)<=5)
-    {
-        $err.="<li>Password must be greater than 5 chars</li>";
-    }
-    if($pass1!=$pass2)
-    {
-        $err.="<li>Password and confirm password are the same</li>";
-    }
-    if($_POST['slYear']=="0")
-    {
-        $err.="<li>Choose Year of Birth, please</li>";
-
-    }
-    if($err!="")
-    {
-        echo $err;
-    }
-    else{
-
-        include_once("connection.php");
-        $pass=md5($pass1);
-        $sq="SELECT * FROM customer WHERE username='$us' OR email='$email'";
-        $res= pg_query($conn,$sq);
-
-        // neu khong bi trung email va user
-        if(pg_num_rows($res)==0)
-        {
-            pg_query($conn,"INSERT INTO customer (username, password, custname, gender, address, telephone,
-             email, cusdate, cusmonth, cusyear, ssn, activecode, state)
-             VALUES ('$us','$pass','$fullname','$sex', '$address', '$tel', '$email',
-              $date, $month, $year,'','',0)") or die(pg_error($conn));
-             echo"You have registered successfully";
-
-        }
-        else 
-        {
-            echo "Username or email already exists";
-        }
-       
-    }
-
-}
-?>
- 
+	?>
 <div class="container">
-        <h2>Member Registration</h2>
+        <h2>Member UpdateProfile</h2>
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
 					<div class="form-group">
 						    
                             <label for="txtTen" class="col-sm-2 control-label">Username(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtUsername" id="txtUsername" class="form-control" placeholder="Username" value=""/>
+							      <input type="text" name="txtUsername" id="txtID" class="form-control"  value="<?php echo $account;?>" readonly/>
 							</div>
                       </div>  
-                      
-                       <div class="form-group">   
-                            <label for="" class="col-sm-2 control-label">Password(*):  </label>
-							<div class="col-sm-10">
-							      <input type="password" name="txtPass1" id="txtPass1" class="form-control" placeholder="Password"/>
-							</div>
-                       </div>     
-                       
-                       <div class="form-group"> 
-                            <label for="" class="col-sm-2 control-label">Confirm Password(*):  </label>
-							<div class="col-sm-10">
-							      <input type="password" name="txtPass2" id="txtPass2" class="form-control" placeholder="Confirm your Password"/>
-							</div>
-                       </div>     
                        
                        <div class="form-group">                               
                             <label for="lblFullName" class="col-sm-2 control-label">Full name(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtFullname" id="txtFullname" value="" class="form-control" placeholder="Enter Fullname"/>
+							      <input type="text" name="txtCustName" id="txtCustName"  class="form-control"  value="<?php echo $Cusname;?>"readonly/>
 							</div>
                        </div> 
                        
                        <div class="form-group">      
                             <label for="lblEmail" class="col-sm-2 control-label">Email(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtEmail" id="txtEmail" value="" class="form-control" placeholder="Email"/>
+							      <input type="text" name="txtEmail" id="txtEmail"  class="form-control"  value="<?php echo $email;?>" readonly />
 							</div>
                        </div>  
                        
                         <div class="form-group">   
                              <label for="lblDiaChi" class="col-sm-2 control-label">Address(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtAddress" id="txtAddress" value="" class="form-control" placeholder="Address"/>
+							      <input type="text" name="txtAddress" id="txtAddress"  class="form-control"  value="<?php echo $Address;?>"readonly/>
 							</div>
                         </div>  
                         
                          <div class="form-group">  
-                            <label for="lblDienThoai" class="col-sm-2 control-label">Telephone(*):  </label>
+                            <label for="lbltelephone" class="col-sm-2 control-label">Telephone(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtTel" id="txtTel" value="" class="form-control" placeholder="Telephone" />
+							      <input type="text" name="txttelephone" id="txttelephone" class="form-control"  value="<?php echo $telephone;?>"readonly/>
 							</div>
                          </div> 
                          
-                          <div class="form-group">  
-                            <label for="lblGioiTinh" class="col-sm-2 control-label">Gender(*):  </label>
-							<div class="col-sm-10">                              
-                                      <label class="radio-inline"><input type="radio" name="grpRender" value="0" id="grpRender"  />
-                                      Male</label>
-                                    
-                                      <label class="radio-inline"><input type="radio" name="grpRender" value="1" id="grpRender" />
-                                      
-                                      Female</label>
-
-							</div>
-                          </div> 
+                         
                           
                           <div class="form-group"> 
                             <label for="lblNgaySinh" class="col-sm-2 control-label">Date of Birth(*):  </label>
                             <div class="col-sm-10 input-group">
                                 <span class="input-group-btn">
-                                  <select name="slDate" id="slDate" class="form-control" >
-                						<option value="0">Choose Date</option>
+                                  <select name="slDate" id="slDate" class="form-control" readonly >
+                						<option value="<?php echo $CusDate;?> " ><?php echo $CusDate;?></option>
 										<?php
                                             for($i=1;$i<=31;$i++)
                                              {                                                
@@ -209,8 +132,8 @@ if(isset($_POST['btnRegister']))
                 				 </select>
                                 </span>
                                 <span class="input-group-btn">
-                                  <select name="slMonth" id="slMonth" class="form-control">
-                					<option value="0">Choose Month</option>
+                                  <select name="slMonth" id="slMonth" class="form-control" readonly>
+                					<option value="<?php echo $CusMonth;?>"><?php echo $CusMonth;?></option>
 									<?php
                                         for($i=1;$i<=12;$i++)
                                          {
@@ -221,8 +144,8 @@ if(isset($_POST['btnRegister']))
                 				</select>
                                 </span>
                                 <span class="input-group-btn">
-                                  <select name="slYear" id="slYear" class="form-control">
-                                    <option value="0">Choose Year</option>
+                                  <select name="slYear" id="slYear" class="form-control" readonly>
+                                    <option value="<?php echo $CusYear;?>"><?php echo $CusYear;?></option>
                                     <?php
                                         for($i=1970;$i<=2020;$i++)
                                          {
@@ -232,15 +155,23 @@ if(isset($_POST['btnRegister']))
                                 </select>
                                 </span>
                            </div>
+
                       </div>	
-					<div class="form-group">
+                      <div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-						      <input type="submit"  class="site-btn" name="btnRegister" id="btnRegister" value="Register" />
+						      <input type="button"  class="site-btn" name="btnUpdate" id="btnUpdate" value="Update" onclick="window.location='?page=upa'"/>
+                              <input type="button" class="site-btn" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=content'" />
                               	
-						</div>
-                     </div>
-				</form>
+                        </div>
+                        
+                    </div>
+                </form>
 </div>
-
+                                    
+                      <?php
+		
+        }
     
-
+    
+    ?> 
+    

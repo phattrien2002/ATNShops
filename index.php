@@ -1,3 +1,6 @@
+
+    
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Vinyl Template">
@@ -113,8 +116,8 @@ include_once("connection.php");
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> sieungccgcc19186@fpt.edu.vn</li>
-                <li>A shopping website for toy</li>
+                <li><i class="fa fa-envelope"></i> kietlpagcc200083@fpt.edu.vn</li>
+                <li>ATN shop</li>
             </ul>
         </div>
         <div class="col-lg-3">
@@ -140,19 +143,19 @@ include_once("connection.php");
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> sieungcc19186@fpt.edu.vn</li>
+                                <li><i class="fa fa-envelope"></i> kietlpagcc200083@fpt.edu.vn</li>
                                 <li>A shopping website for toy </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
-                            <div class="header__top__right__social">
+                            <!-- <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
+                            </div> -->
                             <div class="header__top__right__language">
                                 <img src="img/language.png" alt="">
                                 <div>English</div>
@@ -227,6 +230,7 @@ include_once("connection.php");
                                     <ul class="header__menu__dropdown">
                                     <li><a href="?page=cat">Category Management</a></li>
                                     <li><a href="?page=branch">Branch Management</a></li>
+                                    <li><a href="?page=Supp">Supplier Management</a></li>
                                     </ul>
                                     <li><a href="?page=content">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -372,12 +376,23 @@ include_once("connection.php");
         {
             include_once('add_branch.php');
         }
-        
         else if($page=="Fea")
     {
         include_once('Featured.php');
     }
         
+        else if($page=="Supp")
+    {
+        include_once('Supplier.php');
+    }   
+    else if($page=="addSupp")
+    {
+        include_once('add_supplier.php');
+    }
+    else if($page=="updateSupp")
+    {
+        include_once('update_Supp.php');
+    }    
        
     }else
     {
@@ -396,12 +411,12 @@ include_once("connection.php");
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="ATNtoy/Logo.png" alt=""></a>
+                            <a href="./index.php"><img src="ATNtoy/Logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 160 Road 30/4 An Phu, Ninh Kieu, Can Tho, Vietnam</li>
-                            <li>Phone: +84 90 785 3006</li>
-                            <li>Email: sieungcc19186@fpt.edu.vn</li>
+                            <li>Address: 311, Ninh Kieu, Can Tho, Vietnam</li>
+                            <li>Phone: +84 949 010 942</li>
+                            <li>Email:kietlpagcc200083@fpt.edu.vn</li>
                         </ul>
                     </div>
                 </div>
@@ -434,19 +449,19 @@ include_once("connection.php");
                             <input type="text" placeholder="Enter your mail">
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
-                        <div class="footer__widget__social">
+                        <!-- <div class="footer__widget__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"> Sieu Nguyen</div>
+                        <div class="footer__copyright__text"> Luu Pham Anh Kiet</div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>
@@ -504,9 +519,14 @@ include_once("connection.php");
 		
 			while ($row=pg_fetch_array($result, NULL, PGSQL_ASSOC))
 			{
-				echo '<li ><a  href="?page=shop-grid&&id='.$row['cat_id'].'">'.$row['cat_name'].'</a></li>';
+				echo '<li ><a  href="?page=shop-grid&&id='.$row['cat_id'].'">'.$row['cat_name'].'</a></li>';    
 			}
     }
     
     
     ?>
+    
+    
+
+
+

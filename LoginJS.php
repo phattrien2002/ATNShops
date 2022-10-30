@@ -30,8 +30,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5> 0389 766 155</h5>
-                                <span>Support 24/7</span>
+                                <h5> +84 949 010 942</h5>
+                                <span>support 24/7 time</span>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
 			include_once("connection.php");
 			$pass = md5($pa);
 			$res = pg_query($conn, "SELECT username, password, state FROM customer WHERE username='$us' AND password='$pass'")
-            or die(pg_last_error($conn));
+            or die(pg_error($conn));
             $row = pg_fetch_array($res, NULL, PGSQL_ASSOC);
 			if(pg_num_rows($res)==1)
 			{
