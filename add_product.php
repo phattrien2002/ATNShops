@@ -1,49 +1,4 @@
 
-	<!-- Hero Section Begin -->
-    <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Figure</a></li>
-                            <li><a href="#">Pillow</a></li>
-                            <li><a href="#">Image</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5> +84 09 0785 3006</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="ATNtoy/Background.jpg">
@@ -86,29 +41,19 @@
 			}
 			echo"</select>";
 	}
-	function bind_Supplier_List($conn){
-		$sqlstring ="SELECT supplier_id, supplier_name from supplier";
-		$result= pg_query($conn, $sqlstring);
-		echo"<SELECT name ='SupplierList'class='form-control '
-			<option value='0'>Choose branch</option>";
-			while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
-				echo"<OPTION value='".$row['supplier_id']."'>".$row['supplier_name']. "</option>";
-			}
-			echo"</select>";
-	}
 
 	if(isset($_POST["btnAdd"]))
 	{  
 		$id = $_POST["txtID"];
 		$proname=$_POST["txtName"];
 		$short=$_POST['txtShort'];
+		$branch=$_POST['txtbranch'];
 		$detail=$_POST['txtDetail'];
 		$price=$_POST['txtPrice'];
 		$qty=$_POST['txtQty'];
         $pic=$_FILES['txtImage'];
         $category=$_POST['CategoryList'];
 		$branchlist=$_POST['BranchList'];
-		$supplierlist=$_POST['SupplierList'];
 		
 		$err="";
 		
@@ -135,12 +80,11 @@
 						copy($pic['tmp_name'],"ATNtoy/".$pic['name']);
 						$filePic =$pic['name'];
 						$sqlstring="INSERT INTO product(
-							product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, branch_id,supplierid)
-							VALUES('$id','$proname', $price,'$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filePic','$category', '$branchlist','$supplierlist')";
+							product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, branch_id)
+							VALUES('$id','$proname', $price,'$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filePic','$category', '$branchlist')";
 							
 						pg_query($conn, $sqlstring);
 						echo'<li>You have add successfully</li>';
-						
 
 					}	
 					else {
@@ -203,13 +147,6 @@
 							<div class="col-sm-10">
                             
 							      <?php bind_Branch_List($conn); ?>
-							</div>
-                </div> 
-				<div class="form-group">   
-                    <label for="" class="col-sm-2 control-label">Supplier(*):  </label>
-							<div class="col-sm-10">
-                            
-							      <?php bind_Supplier_List($conn); ?>
 							</div>
                 </div> 
 				       
