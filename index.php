@@ -381,18 +381,14 @@ include_once("connection.php");
         include_once('Featured.php');
     }
         
-        else if($page=="Supp")
+        else if($page=="supplier")
     {
-        include_once('Supplier.php');
+        include_once('supplier.php');
     }   
-    else if($page=="addSupp")
+    else if($page=="addsupplier")
     {
         include_once('add_supplier.php');
-    }
-    else if($page=="updateSupp")
-    {
-        include_once('update_Supp.php');
-    }    
+    } 
        
     }else
     {
@@ -414,8 +410,8 @@ include_once("connection.php");
                             <a href="./index.php"><img src="ATNtoy/Logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 311, Ninh Kieu, Can Tho, Vietnam</li>
-                            <li>Phone: +84 949 010 942</li>
+                            <li>Address: 160 Ninh Kieu, Can Tho, Vietnam</li>
+                            <li>Phone: 0389 766 155</li>
                             <li>Email:kietlpagcc200083@fpt.edu.vn</li>
                         </ul>
                     </div>

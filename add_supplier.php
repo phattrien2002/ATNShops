@@ -44,7 +44,7 @@
 				if(pg_num_rows($result)=="0")
 				{
 					pg_query($conn, "insert into supplier (supplierid, suppliername) values ('$id', '$name')");
-					echo '<meta http-equiv="refresh" content="0;URL =?page=Supp"';
+					echo '<meta http-equiv="refresh" content="0;URL =?page=supplier"';
 				}
 				else
 				{
