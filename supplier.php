@@ -80,7 +80,7 @@
                 <tr>
                     <th><strong>No.</strong></th>
                     <th><strong>Supplier Name</strong></th>
-                     <th><strong>Supplier Addres</strong></th>
+                    <th><strong>Supplier Addres</strong></th>
                     <th><strong>Edit</strong></th>
                     <th><strong>Delete</strong></th>
                 </tr>
