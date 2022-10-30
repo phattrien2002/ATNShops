@@ -74,11 +74,11 @@
 			$c_name = $_POST['txtName'];
 			$c_des = $_POST['txtDes'];
 			$err = "";
-			if($id=="")
+			if($c_id=="")
 			{
 				$err .= "Enter category ID</br>";
 			}
-			if($name=="")
+			if($c_name=="")
 			{
 				$err .= "Enter category name</br>";
 			}
