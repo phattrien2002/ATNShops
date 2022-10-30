@@ -1,13 +1,10 @@
-
-    
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Vinyl Template">
     <meta name="keywords" content="Vinyl, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ATN Shops</title>
+    <title>ATN Shop</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -21,7 +18,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="shortcut icon" href="ATNtoy\Logo.jpg">
+    <link rel="shortcut icon" href="ATNtoy\Logo.png">
 </head>
 
 <body>
@@ -37,7 +34,7 @@ include_once("connection.php");
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="?page=content"><img src="ATNtoy/Logo.jpg" alt=""></a>
+            <a href="?page=content"><img src="ATNtoy/Logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
@@ -116,7 +113,7 @@ include_once("connection.php");
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i>trientpgcc200063@fpt.edu.vn</li>
+                <li><i class="fa fa-envelope"></i> sieungccgcc19186@fpt.edu.vn</li>
                 <li>A shopping website for toy</li>
             </ul>
         </div>
@@ -143,7 +140,7 @@ include_once("connection.php");
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> trientpgcc200063@fpt.edu.vn</li>
+                                <li><i class="fa fa-envelope"></i> sieungcc19186@fpt.edu.vn</li>
                                 <li>A shopping website for toy </li>
                             </ul>
                         </div>
@@ -210,7 +207,7 @@ include_once("connection.php");
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="?page=content"><img src="ATNtoy/Logo.jpg" alt=""></a>
+                        <a href="?page=content"><img src="ATNtoy/Logo.png" alt=""></a>
                     </div>
                 </div>
                 
@@ -230,7 +227,6 @@ include_once("connection.php");
                                     <ul class="header__menu__dropdown">
                                     <li><a href="?page=cat">Category Management</a></li>
                                     <li><a href="?page=branch">Branch Management</a></li>
-                                    <li><a href="?page=supplier">Supplier Management</a></li>
                                     </ul>
                                     <li><a href="?page=content">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -372,18 +368,9 @@ include_once("connection.php");
         else if($page=="upbr")
         {
             include_once('update_branch.php');
-        } 
-        else if($page=="addbr")
+        } else if($page=="addbr")
         {
             include_once('add_branch.php');
-        }
-        else if($page=="supplier")
-        {
-            include_once('supplier.php');
-        }
-        else if($page=="adds")
-        {
-            include_once('add_supplier.php');
         }
         
         else if($page=="Fea")
@@ -409,12 +396,12 @@ include_once("connection.php");
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="ATNtoy/Logo.jpg" alt=""></a>
+                            <a href="./index.html"><img src="ATNtoy/Logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 160 Road 30/4 An Phu, Ninh Kieu, Can Tho, Vietnam</li>
-                            <li>Phone: 0389 766 155</li>
-                            <li>Email: trientpgcc200063@fpt.edu.vn</li>
+                            <li>Phone: +84 90 785 3006</li>
+                            <li>Email: sieungcc19186@fpt.edu.vn</li>
                         </ul>
                     </div>
                 </div>
@@ -459,7 +446,7 @@ include_once("connection.php");
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"> Phat Trien </div>
+                        <div class="footer__copyright__text"> Sieu Nguyen</div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>
@@ -523,8 +510,3 @@ include_once("connection.php");
     
     
     ?>
-    
-    
-
-
-
