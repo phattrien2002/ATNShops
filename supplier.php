@@ -54,8 +54,8 @@
 			<tr>
                 <td class="cotCheckBox"><?php echo $No; ?></td>
                 <td><?php echo $row['supplier_name']?></td>
-                <td style='text-align:center'><a href="?page=updateSupp&&id=<?php echo $row['supplierid'];?>"><i class="fa fa-edit"></i></td>
-                <td style='text-align:center'><a href="?page=branch&&function=del&&id=<?php echo $row['supplierid']; ?>"
+                <td style='text-align:center'><a href="?page=updateSupp&&id=<?php echo $row['supplier_id'];?>"><i class="fa fa-edit"></i></td>
+                <td style='text-align:center'><a href="?page=branch&&function=del&&id=<?php echo $row['supplier_id']; ?>"
                  onclick="return ConfirmDelete()"><i class="fa fa-close"></i></td>
             </tr>
             <?php
