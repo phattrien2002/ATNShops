@@ -1,5 +1,9 @@
     <?php 
     
+    session_start();
+    session_unset();
     session_destroy();
-    echo '<meta http-equiv="refresh" content="0; URL=index.php"/>'
+    echo "<dis class = 'alert alert-success' role ='alert' >You have cleaned session!<?div>";
+
+    header("Refresh: 2; URL = index.php");
 ?>
