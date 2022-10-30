@@ -25,11 +25,11 @@
 			$b_id = $_POST['txtID'];
 			$b_name = $_POST['txtName'];
 			$err = "";
-			if($id=="")
+			if($b_id=="")
 			{
 				$err .= "Enter branch ID</br>";
 			}
-			if($name=="")
+			if($b_name=="")
 			{
 				$err .= "Enter branch name</br>";
 			}

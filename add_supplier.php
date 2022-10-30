@@ -25,11 +25,11 @@
 			$s_id = $_POST['txtID'];
 			$s_name = $_POST['txtName'];
 			$err = "";
-			if($id=="")
+			if($s_id=="")
 			{
 				$err .= "Enter supplier ID</br>";
 			}
-			if($name=="")
+			if($s_name=="")
 			{
 				$err .= "Enter supplier name</br>";
 			}
