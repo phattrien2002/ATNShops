@@ -104,7 +104,6 @@
 		$short=$_POST['txtShort'];
 		$detail=$_POST['txtDetail'];
 		$price=$_POST['txtPrice'];
-		$oldprice=$_POST['txtOldPrice'];
 		$qty=$_POST['txtQty'];
         $pic=$_FILES['txtImage'];
         $category=$_POST['CategoryList'];
@@ -118,9 +117,6 @@
 		}
 		if(!is_numeric($price)){
 			$err.="<li>Product price must be number</li>";
-		}
-		if(!is_numeric($oldprice)){
-			$err.="<li>Product old price must be number</li>";
 		}
 		if(!is_numeric($qty)){
 			$err.="<li>Product quantity must be number</li>";
@@ -140,7 +136,7 @@
 						$filePic =$pic['name'];
 						$sqlstring="INSERT INTO product(
 							product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, branch_id,supplierid)
-							VALUES('$id','$proname', $price, $oldprice,'$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filePic','$category', '$branchlist','$supplierlist')";
+							VALUES('$id','$proname', $price,'$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filePic','$category', '$branchlist','$supplierlist')";
 							
 						pg_query($conn, $sqlstring);
 						echo'<li>You have add successfully</li>';
@@ -184,13 +180,6 @@
                     <label for="lblGia" class="col-sm-2 control-label">Price(*):  </label>
 							<div class="col-sm-10">
 							      <input type="text" name="txtPrice" id="txtPrice" class="form-control" placeholder="Price" value="<?php if(isset($price)) echo $price?>"/>
-							</div>
-                 </div>   
-
-				 <div class="form-group">  
-                    <label for="lblGia" class="col-sm-2 control-label"> Old Price(*):  </label>
-							<div class="col-sm-10">
-							      <input type="text" name="txtOldPrice" id="txtOldPrice" class="form-control" placeholder="Old Price" value="<?php if(isset($oldprice)) echo $oldprice?>"/>
 							</div>
                  </div>   
 
