@@ -160,6 +160,13 @@
 							      <?php bind_Branch_List($conn); ?>
 							</div>
                 </div> 
+				<div class="form-group">   
+                    <label for="" class="col-sm-2 control-label">Supplier(*):  </label>
+							<div class="col-sm-10">
+							<input type="text" name="Supplierlist" id="Supplist" class="form-control" 
+								  placeholder="Supplier" value=''/>
+							</div>
+                </div> 
 
 				       
                 <div class="form-group">   
@@ -176,13 +183,7 @@
 							</div>
                 </div>
 
-				<div class="form-group">   
-                    <label for="" class="col-sm-2 control-label">Supplier(*):  </label>
-							<div class="col-sm-10">
-							<input type="text" name="Supplierlist" id="Supplist" class="form-control" 
-								  placeholder="Supplier" value=''/>
-							</div>
-                </div> 
+
  
 				<div class="form-group">  
 	                <label for="lblImage" class="col-sm-2 control-label">Image(*):  </label>
