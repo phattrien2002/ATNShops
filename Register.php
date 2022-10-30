@@ -1,75 +1,14 @@
 
-<section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">One Piece</a></li>
-                            <li><a href="#">CTokyo Revenger</a></li>
-                            
-                            <li><a href="#">Attack on Titan</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>0389 766 155</h5>
-                                <span>Support 24/7</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-<section class="breadcrumb-section set-bg" data-setbg="ATNtoy/background.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Register</h2>
-                        <div class="breadcrumb__option">
-                            <a href="?page=content">Home</a>
-                            <span>Register</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <?php 
 if(isset($_POST['btnRegister']))
 {
-    $us = $_POST ['txtUsername'];
+    $uname = $_POST ['txtUsername'];
     $pass1= $_POST['txtPass1'];
     $pass2= $_POST['txtPass2'];
     $fullname= $_POST['txtFullname'];
     $email= $_POST['txtEmail'];
     $address= $_POST['txtAddress'];
-    $tel= $_POST['txtTel'];
+    $phone= $_POST['txtPhone'];
 
     if(isset($_POST['grpRender']))
     {
@@ -80,7 +19,7 @@ if(isset($_POST['btnRegister']))
     $year = $_POST['slYear'];
 
     $err ="";
-    if($us==""||$address=="" ||$pass1=="" ||$fullname==""||$email==""||$tel==""||!isset($sex))
+    if($uname==""||$address=="" ||$pass1=="" ||$fullname==""||$email==""||$phone==""||!isset($sex))
     {
         $err.="<li>Enter fields with mark(*), please</li>";
     }
@@ -105,15 +44,14 @@ if(isset($_POST['btnRegister']))
 
         include_once("connection.php");
         $pass=md5($pass1);
-        $sq="SELECT * FROM customer WHERE username='$us' OR email='$email'";
+        $sq="SELECT * FROM customer WHERE username='$uname' OR email='$email'";
         $res= pg_query($conn,$sq);
 
-        // neu khong bi trung email va user
         if(pg_num_rows($res)==0)
         {
             pg_query($conn,"INSERT INTO customer (username, password, custname, gender, address, telephone,
              email, cusdate, cusmonth, cusyear, ssn, activecode, state)
-             VALUES ('$us','$pass','$fullname','$sex', '$address', '$tel', '$email',
+             VALUES ('$uname','$pass','$fullname','$sex', '$address', '$phone', '$email',
               $date, $month, $year,'','',0)") or die(pg_last_error($conn));
              echo"You have registered successfully";
 
@@ -177,7 +115,7 @@ if(isset($_POST['btnRegister']))
                          <div class="form-group">  
                             <label for="lblDienThoai" class="col-sm-2 control-label">Telephone(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtTel" id="txtTel" value="" class="form-control" placeholder="Telephone" />
+							      <input type="text" name="txtPhone" id="txtPhone" value="" class="form-control" placeholder="Telephone" />
 							</div>
                          </div> 
                          
