@@ -39,11 +39,11 @@
 			}
 			else
 			{
-				$sql = "select * from supplier where supplierid ='$id' and suppliername = '$name'";
+				$sql = "select * from supplier where supplier_id ='$id' and supplier_name = '$name'";
 				$result = pg_query($conn, $sql);
 				if(pg_num_rows($result)=="0")
 				{
-					pg_query($conn, "insert into supplier (supplierid, suppliername) values ('$id', '$name')");
+					pg_query($conn, "insert into supplier (supplier_id, supplier_name) values ('$id', '$name')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=supplier"';
 				}
 				else
@@ -74,7 +74,7 @@
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 						      <input type="submit"  class="site-btn" name="btnAdd" id="btnAdd" value="Add new"/>
-                              <input type="button" class="site-btn" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=Supp'" />
+                              <input type="button" class="site-btn" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=addsupplier'" />
                               	
 						</div>
 					</div>
