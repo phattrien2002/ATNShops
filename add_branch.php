@@ -72,7 +72,7 @@
 							</div>
 					</div>
 					<div class="form-group">
-						    <label for="txtmota" class="col-sm-2 control-label">Branch Address(*):  </label>
+						    <label for="txtMoTa" class="col-sm-2 control-label">Branch Address(*):  </label>
 							<div class="col-sm-10">
 							      <input type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Branch Address" value='<?php echo isset($_POST["txtAddress"])?($_POST["txtAddress"]):"";?>'>
 							</div>
