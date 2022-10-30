@@ -87,12 +87,12 @@
 			echo"</select>";
 	}
 	function bind_Supplier_List($conn){
-		$sqlstring ="SELECT supplierid, suppliername from supplier";
+		$sqlstring ="SELECT supplier_id, supplier_name from supplier";
 		$result= pg_query($conn, $sqlstring);
 		echo"<SELECT name ='SupplierList'class='form-control '
 			<option value='0'>Choose branch</option>";
 			while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
-				echo"<OPTION value='".$row['supplierid']."'>".$row['suppliername']. "</option>";
+				echo"<OPTION value='".$row['supplier_id']."'>".$row['supplier_name']. "</option>";
 			}
 			echo"</select>";
 	}
@@ -213,12 +213,6 @@
 							</div>
                 </div> 
 				       
-                <div class="form-group">   
-                    <label for="lblDetail" class="col-sm-2 control-label">Detail Description(*):  </label>
-							<div class="col-sm-10">
-							      <textarea type="text" name="txtDetail" id="txtDetail" class="form-control" style="height: 150px" row="4" value=""></textarea>
-							</div>
-                </div>
                             
             	<div class="form-group">  
                     <label for="lblQty" class="col-sm-2 control-label">Quantity(*):  </label>
