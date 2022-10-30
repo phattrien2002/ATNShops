@@ -61,6 +61,7 @@
                                         pg_query($conn,"DELETE FROM product WHERE product_id='$p_id'");
                                         echo '<meta http-equiv="refresh" content="0;URL =?page=pm"/>'
                                         ?>
+                                        <!-- <script> document.getElementById("CMM").click();</script>  -->
                                         
                                         <?php
                                         
