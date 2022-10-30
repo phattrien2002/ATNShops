@@ -41,7 +41,7 @@
                     if(isset($_GET["id"]))
                     {
                        $id = $_GET["id"];
-                        pg_query($conn, "delete from branch where branch_id='$id'");
+                        pg_query($conn, "delete from branch where branch_id='$b_id'");
                     }
                          
                 }

@@ -111,10 +111,10 @@
     
         if(isset($_GET["function"]) =="del"){
             if(isset($_GET["id"])){
-                $id =$_GET["id"];
+                $p_id =$_GET["id"];
             if(isset($_SESSION['cart']))
             {
-                unset($_SESSION['cart'][$id]);
+                unset($_SESSION['cart'][$p_id]);
             }
             
             echo '<meta http-equiv="refresh" content="0; URL=?page=shopping-cart"/>' ;
@@ -127,7 +127,7 @@
     ?>
     <?php  if(isset($_GET["function1"]) =="delc"){
             if(isset($_GET["id"])){
-                $id =$_GET["id"];
+                $p_id =$_GET["id"];
             if(isset($_SESSION['cart']))
             {
                 unset($_SESSION['cart']);

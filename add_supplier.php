@@ -22,8 +22,8 @@
 		include_once("connection.php");
 		if(isset($_POST['btnAdd']))
 		{
-			$id = $_POST['txtID'];
-			$name = $_POST['txtName'];
+			$s_id = $_POST['txtID'];
+			$s_name = $_POST['txtName'];
 			$err = "";
 			if($id=="")
 			{
@@ -39,11 +39,11 @@
 			}
 			else
 			{
-				$sql = "select * from supplier where supplier_id ='$id' and supplier_name = '$name'";
+				$sql = "select * from supplier where supplier_id ='$s_id' and supplier_name = '$s_name'";
 				$result = pg_query($conn, $sql);
 				if(pg_num_rows($result)=="0")
 				{
-					pg_query($conn, "insert into supplier (supplier_id, supplier_name) values ('$id', '$name')");
+					pg_query($conn, "insert into supplier (supplier_id, supplier_name) values ('$s_id', '$s_name')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=supplier"';
 				}
 				else

@@ -40,8 +40,8 @@
                 {
                     if(isset($_GET["id"]))
                     {
-                       $id = $_GET["id"];
-                        pg_query($conn, "delete from supplier where supplierid='$id'");
+                       $s_id = $_GET["id"];
+                        pg_query($conn, "delete from supplier where supplierid='$s_id'");
                     }
                          
                 }

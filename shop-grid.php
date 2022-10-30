@@ -240,9 +240,9 @@
                             <div class="product__discount__slider owl-carousel">
                             <?php 
                              if(isset($_GET['id'])){
-                                $id=$_GET['id'];
+                                $p_id=$_GET['id'];
                                 $result = pg_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
-                                from product, category where product.cat_id = category.cat_id and '$id'=category.cat_id ");
+                                from product, category where product.cat_id = category.cat_id and '$p_id'=category.cat_id ");
                                 
         
                             }
@@ -309,9 +309,9 @@
                     <div class="row">
                     <?php 
                         if(isset($_GET['id'])){
-                            $id=$_GET['id'];
+                            $p_id=$_GET['id'];
                             $result = pg_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
-                            from product, category where product.cat_id = category.cat_id and '$id'=category.cat_id ");
+                            from product, category where product.cat_id = category.cat_id and '$p_id'=category.cat_id ");
                         
                         }
                         else{

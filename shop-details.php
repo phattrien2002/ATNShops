@@ -266,17 +266,17 @@ $row=pg_fetch_array($result, NULL, PGSQL_ASSOC);
     if(isset($_POST['btnCart']))
     {
         $qty = $_POST['txtqty'];
-    if(!isset($_SESSION['cart'][$id]))
+    if(!isset($_SESSION['cart'][$p_id]))
     {
-        $_SESSION['cart'][$id]['img'] = $row['pro_image'];
-        $_SESSION['cart'][$id]['name'] = $row['product_name'];
-        $_SESSION['cart'][$id]['price'] = $row['price'];
-        $_SESSION['cart'][$id]['qty'] = $qty;
+        $_SESSION['cart'][$p_id]['img'] = $row['pro_image'];
+        $_SESSION['cart'][$p_id]['name'] = $row['product_name'];
+        $_SESSION['cart'][$p_id]['price'] = $row['price'];
+        $_SESSION['cart'][$p_id]['qty'] = $qty;
         echo "<script> alert(' Add to cart successful ');location.href='?page=content';</script>";
         }
     else
     {
-        $_SESSION['cart'][$id]['qty'] += $qty;
+        $_SESSION['cart'][$p_id]['qty'] += $qty;
         echo "<script> alert(' Add to cart successful ');location.href='?page=content';</script>";
     }
     }

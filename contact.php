@@ -30,8 +30,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+84 949 010 942</h5>
-                                <span>support 24/7 time</span>
+                                <h5>0389 766 155</h5>
+                                <span>Support 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -67,28 +67,28 @@
                     <div class="contact__widget">
                         <span class="icon_phone"></span>
                         <h4>Phone   </h4>
-                        <p>+84-94-901-0942</p>
+                        <p>0389 766 155</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_pin_alt"></span>
                         <h4>Address</h4>
-                        <p>311, Ninh Kieu, Can Tho, Vietnam</p>
+                        <p>160 Ninh Kieu, Can Tho, Vietnam</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_clock_alt"></span>
                         <h4>Open time</h4>
-                        <p>10:00 am to 23:00 pm</p>
+                        <p>8:00 am to 10:00 pm</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_mail_alt"></span>
                         <h4>Email</h4>
-                        <p>kietlpagcc200083@fpt.edu.vn</p>
+                        <p>trientpgcc200063@fpt.edu.vn</p>
                     </div>
                 </div>
             </div>

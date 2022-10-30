@@ -22,8 +22,8 @@
 		include_once("connection.php");
 		if(isset($_POST['btnAdd']))
 		{
-			$id = $_POST['txtID'];
-			$name = $_POST['txtName'];
+			$b_id = $_POST['txtID'];
+			$b_name = $_POST['txtName'];
 			$err = "";
 			if($id=="")
 			{
@@ -39,11 +39,11 @@
 			}
 			else
 			{
-				$sql = "select * from branch where branch_id ='$id' and branch_name = '$name'";
+				$sql = "select * from branch where branch_id ='$b_id' and branch_name = '$b_name'";
 				$result = pg_query($conn, $sql);
 				if(pg_num_rows($result)=="0")
 				{
-					pg_query($conn, "insert into branch (branch_id, branch_name) values ('$id', '$name')");
+					pg_query($conn, "insert into branch (branch_id, branch_name) values ('$b_id', '$b_name')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=branch"';
 				}
 				else

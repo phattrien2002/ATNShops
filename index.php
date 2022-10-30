@@ -44,7 +44,7 @@ include_once("connection.php");
                 <li><a href="#"><i class="fa fa-heart"></i> <span>2</span></a></li>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$00.00</span></div>
+            <div class="header__cart__price">item: <span>$.</span></div>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
@@ -116,8 +116,8 @@ include_once("connection.php");
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> kietlpagcc200083@fpt.edu.vn</li>
-                <li>ATN shop</li>
+                <li><i class="fa fa-envelope"></i> trientpgcc200063@fpt.edu.vn</li>
+                <li>ATN Shops</li>
             </ul>
         </div>
         <div class="col-lg-3">
@@ -143,7 +143,7 @@ include_once("connection.php");
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> kietlpagcc200083@fpt.edu.vn</li>
+                                <li><i class="fa fa-envelope"></i> trientpgcc200063@fpt.edu.vn</li>
                                 <li>A shopping website for toy </li>
                             </ul>
                         </div>
@@ -440,12 +440,6 @@ include_once("connection.php");
                             <input type="text" placeholder="Enter your mail">
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
-                        <!-- <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div> -->
                     </div>
                 </div>
             </div>

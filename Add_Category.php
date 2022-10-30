@@ -70,9 +70,9 @@
 		include_once("connection.php");
 		if(isset($_POST['btnAdd']))
 		{
-			$id = $_POST['txtID'];
-			$name = $_POST['txtName'];
-			$des = $_POST['txtDes'];
+			$c_id = $_POST['txtID'];
+			$c_name = $_POST['txtName'];
+			$c_des = $_POST['txtDes'];
 			$err = "";
 			if($id=="")
 			{
@@ -88,11 +88,11 @@
 			}
 			else
 			{
-				$sql = "select * from category where cat_id ='$id' and cat_name = '$name'";
+				$sql = "select * from category where cat_id ='$c_id' and cat_name = '$c_name'";
 				$result = pg_query($conn, $sql);
 				if(pg_num_rows($result)=="0")
 				{
-					pg_query($conn, "insert into category (cat_id, cat_name, cat_des) values ('$id', '$name','$des')");
+					pg_query($conn, "insert into category (cat_id, cat_name, cat_des) values ('$c_id', '$c_name','$c_des')");
 					echo '<meta http-equiv="refresh" content="0;URL =?page=cat"';
 				}
 				else

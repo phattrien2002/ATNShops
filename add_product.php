@@ -102,8 +102,6 @@
 		$id = $_POST["txtID"];
 		$proname=$_POST["txtName"];
 		$short=$_POST['txtShort'];
-		// $branch=$_POST['txtbranch'];
-		// $supplier=$_POST['txtsupplier'];
 		$detail=$_POST['txtDetail'];
 		$price=$_POST['txtPrice'];
 		$qty=$_POST['txtQty'];
