@@ -21,7 +21,7 @@
 <form name="frm" method="post" action="">
         <h2>Supplier</h2>
         <p>
-        <i class="fa fa-plus"></i> <a href="?page=addSupp"> Add</a>
+        <i class="fa fa-plus"></i> <a href="?page=addsupplier"> Add</a>
         </p>
         <table id="tablesupplier" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
