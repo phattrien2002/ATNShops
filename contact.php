@@ -67,7 +67,7 @@
                     <div class="contact__widget">
                         <span class="icon_phone"></span>
                         <h4>Phone   </h4>
-                        <p>+84-90-785-3006</p>
+                        <p>0389 766 155</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
