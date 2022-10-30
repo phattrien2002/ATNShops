@@ -41,6 +41,16 @@
 			}
 			echo"</select>";
 	}
+	function bind_Supplier_List($conn){
+		$sqlstring ="SELECT supplier_id, supplier_name from branch";
+		$result= pg_query($conn, $sqlstring);
+		echo"<SELECT name ='BranchList'class='form-control '
+			<option value='0'>Choose Supplier</option>";
+			while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
+				echo"<OPTION value='".$row['supplier_id']."'>".$row['supplier_name']. "</option>";
+			}
+			echo"</select>";
+	}
 
 	if(isset($_POST["btnAdd"]))
 	{  
@@ -128,14 +138,6 @@
                  </div>   
 
                  <div class="form-group">   
-                    <label for="" class="col-sm-2 control-label">Product category(*):  </label>
-							<div class="col-sm-10">
-                            
-							      <?php bind_Category_List($conn); ?>
-							</div>
-                </div>  
-
-				<div class="form-group">   
                     <label for="" class="col-sm-2 control-label">Product category(*):  </label>
 							<div class="col-sm-10">
                             
