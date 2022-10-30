@@ -10,9 +10,9 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
+                            <li><a href="#">Figure</a></li>
+                            <li><a href="#">Pillow</a></li>
+                            <li><a href="#">Image</a></li>
                             
                         </ul>
                     </div>
@@ -34,8 +34,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5> 0389 766 155</h5>
-                                <span>Support 24/7</span>
+                                <h5> +84 09 0785 3006</h5>
+                                <span>support 24/7 time</span>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,24 @@
     </section>
     <!-- Hero Section End -->
 
-
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="ATNtoy/Background.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Adding</h2>
+                        <div class="breadcrumb__option">
+                            <a href="?page=content">Home</a>
+                            <a href="?page=content">Recorded</a>
+                            <span>Add New</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
     <?php
 	include_once("connection.php");
 	
@@ -72,8 +89,8 @@
 
 	if(isset($_POST["btnAdd"]))
 	{  
-		$p_id = $_POST["txtID"];
-		$p_name=$_POST["txtName"];
+		$id = $_POST["txtID"];
+		$proname=$_POST["txtName"];
 		$short=$_POST['txtShort'];
 		$branch=$_POST['txtbranch'];
 		$detail=$_POST['txtDetail'];
@@ -85,7 +102,7 @@
 		
 		$err="";
 		
-		if(trim($p_name)==""){
+		if(trim($proname)==""){
 			$err.="<li>Enter product name, please</li>";
 		}
 		if(!is_numeric($price)){
@@ -100,10 +117,10 @@
 		else{
 			if($pic['type']=="image/jpg"||$pic['type']=="image/jpeg"||$pic['type']=="image/png" ||$pic['type']=="image/gif"){
 				if($pic['size']<=614400){
-					$sql="SELECT * from product where product_id='$id'or product_name='$p_name'";
-                    $ret= pg_query($conn,$sql);
+					$sq="SELECT * from product where product_id='$id'or product_name='$proname'";
+                    $result= pg_query($conn,$sq);
                     
-					if(pg_num_rows($re)==0)
+					if(pg_num_rows($result)==0)
 					{
 						copy($pic['tmp_name'],"ATNtoy/".$pic['name']);
 						$filePic =$pic['name'];
