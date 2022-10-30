@@ -73,7 +73,7 @@
         <form name="frm" method="post" action="">
         <h1>Supplier Management</h1>
         <p>
-        <i class="fa fa-plus"></i> <a href="?page=addc"> Add</a>
+        <i class="fa fa-plus"></i> <a href="?page=adds"> Add</a>
         </p>
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>

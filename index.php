@@ -381,7 +381,7 @@ include_once("connection.php");
         {
             include_once('supplier.php');
         }
-        else if($page=="addsupplier")
+        else if($page=="adds")
         {
             include_once('add_supplier.php');
         }
