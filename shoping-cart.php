@@ -1,3 +1,4 @@
+
 <script>
         function deleteConfirm(){
             if(confirm("Are you sure?")){
@@ -107,7 +108,7 @@
                             <tbody>
     
     <?php
-    
+        include_once("permission.php");
     
         if(isset($_GET["function"]) =="del"){
             if(isset($_GET["id"])){
