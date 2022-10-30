@@ -163,8 +163,7 @@
 				<div class="form-group">   
                     <label for="" class="col-sm-2 control-label">Supplier(*):  </label>
 							<div class="col-sm-10">
-							<input type="text" name="Supplierlist" id="Supplist" class="form-control" 
-								  placeholder="Supplier" value=''/>
+							<?php bind_Branch_List($conn); ?>
 							</div>
                 </div> 
 
