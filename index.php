@@ -377,9 +377,13 @@ include_once("connection.php");
         {
             include_once('add_branch.php');
         }
-        else if($page=="addsupplier")
+        else if($page=="supplier")
         {
             include_once('supplier.php');
+        }
+        else if($page=="addsupplier")
+        {
+            include_once('add_supplier.php');
         }
         
         else if($page=="Fea")
