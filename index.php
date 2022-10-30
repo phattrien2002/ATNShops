@@ -230,7 +230,7 @@ include_once("connection.php");
                                     <ul class="header__menu__dropdown">
                                     <li><a href="?page=cat">Category Management</a></li>
                                     <li><a href="?page=branch">Branch Management</a></li>
-                                    <li><a href="?page=branch">Supplier Management</a></li>
+                                    <li><a href="?page=supplier">Supplier Management</a></li>
                                     </ul>
                                     <li><a href="?page=content">Pages</a>
                                 <ul class="header__menu__dropdown">

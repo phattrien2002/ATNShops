@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Branch Management</h2>
+                        <h2>Supplier Management</h2>
                         <div class="breadcrumb__option">
                             <a href="?page=content">Home</a>
-                            <span>Branch Management</span>
+                            <span>Supplier Management</span>
                         </div>
                     </div>
                 </div>
@@ -29,15 +29,15 @@
 			$err = "";
 			if($id=="")
 			{
-				$err .= "Enter branch ID</br>";
+				$err .= "Enter Supplier ID</br>";
 			}
 			if($name=="")
 			{
-				$err .= "Enter branch name</br>";
+				$err .= "Enter Supplier name</br>";
 			}
 			if($address=="")
 			{
-				$err .= "Enter branch address</br>";
+				$err .= "Enter Supplier address</br>";
 			}
 			if($err != "")
 			{
@@ -45,12 +45,12 @@
 			}
 			else
 			{
-				$sql = "select * from branch where branch_id ='$id' and branch_name = '$name'and branch_address = '$address'";
+				$sql = "select * from supplier where supplier_id ='$id' and supplier_name = '$name'and supplier_address = '$address'";
 				$re = pg_query($conn, $sql);
 				if(pg_num_rows($re)=="0")
 				{
-					pg_query($conn, "insert into branch (branch_id, branch_name, branch_address) values ('$id', '$name','$address')");
-					echo '<meta http-equiv="refresh" content="0;URL =?page=branch"';
+					pg_query($conn, "insert into supplier (supplier_id, supplier_name, supplier_address) values ('$id', '$name','$address')");
+					echo '<meta http-equiv="refresh" content="0;URL =?page=supplier"';
 				}
 				else
 				{
@@ -64,21 +64,21 @@
 	<h2>Adding Branch</h2>
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
 				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch ID(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Supplier ID(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Branch ID" value='<?php echo isset($_POST["txtID"])?($_POST["txtID"]):"";?>'>
+							      <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Supplier ID" value='<?php echo isset($_POST["txtID"])?($_POST["txtID"]):"";?>'>
 							</div>
 					</div>	
 				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch Name(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Supplier Name(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
+							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Supplier Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
 							</div>
 					</div>
 					<div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch Address(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Supplier Address(*):  </label>
 							<div class="col-sm-10">
-							      <input type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Branch Address" value='<?php echo isset($_POST["txtAddress"])?($_POST["txtAddress"]):"";?>'>
+							      <input type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Supplier Address" value='<?php echo isset($_POST["txtAddress"])?($_POST["txtAddress"]):"";?>'>
 							</div>
 					</div>
                     
@@ -86,7 +86,7 @@
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 						      <input type="submit"  class="site-btn" name="btnAdd" id="btnAdd" value="Add new"/>
-                              <input type="button" class="site-btn" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=branch'" />
+                              <input type="button" class="site-btn" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=supplier'" />
                               	
 						</div>
 					</div>
